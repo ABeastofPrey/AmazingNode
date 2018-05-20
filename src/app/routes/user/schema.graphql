@@ -16,7 +16,7 @@ type Query {
   # ### GET user
   #
   # _Arguments_
-  # - **id**: User id (optional)
+  # - **id**: User id (required)
   user(_id: ID!): User
   users(roles: [String], disabled: Boolean): [User]
 }

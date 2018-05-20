@@ -31,7 +31,6 @@ const connector = function() {
         }
         // save mongoose and mongoose models to ctx.
         ctx.mongoose = mongoose;
-        ctx.models = ctx.mongoose.models;
         await next()
     };
 }

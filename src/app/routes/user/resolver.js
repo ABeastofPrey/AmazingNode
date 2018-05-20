@@ -4,11 +4,11 @@
 module.exports.resolver = {
     Query: {
         async user(root, { _id }, context) {
-            const { User } = context.models;
+            const { User } = context.mongoose.models;
             return await User.findById(_id);
         },
         async users(root, { roles, disabled }, context) {
-            const { User } = context.models;
+            const { User } = context.mongoose.models;
             let query = User.find();
             //   isPresent(roles) && (query = query.find({ roles: { $in: roles }}));
             //   isNotNil(disabled) && (query = query.find({ disabled }));
@@ -17,15 +17,15 @@ module.exports.resolver = {
     },
     Mutation: {
         async createUser(root, { input }, context) {
-            const { User } = context.models;
+            const { User } = context.mongoose.models;
             return await User.create(input);
         },
         async updateUser(root, { _id, input }, context) {
-            const { User } = context.models;
+            const { User } = context.mongoose.models;
             return await User.update({ _id }, input);
         },
         async deleteUser(root, { _id }, context) {
-            const { User } = context.models;
+            const { User } = context.mongoose.models;
             return await User.findByIdAndDelete(_id);
         }
     }
