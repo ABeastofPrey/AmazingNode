@@ -1,0 +1,13 @@
+{
+    "Customer": {
+        "dbConfig": {
+            "host": "prod-db-server",
+            "port": 27017,
+            "dbName": "customers",
+            "debug": false
+        },
+        "credit": {
+            "initialDays": 30
+        }
+    }
+}

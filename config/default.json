@@ -1,0 +1,14 @@
+{
+    "Customer": {
+        "dbConfig": {
+            "host": "localhost",
+            "port": 27017,
+            "dbName": "customers",
+            "debug": true
+        },
+        "credit": {
+            "initialLimit": 100,
+            "initialDays": 1
+        }
+    }
+}

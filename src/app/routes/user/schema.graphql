@@ -1,0 +1,28 @@
+type User {
+  _id: ID!
+  email: String!
+  name: String
+  disabled: Boolean
+}
+
+input UserInput {
+  name: String
+  password: String
+  email: String!
+  disabled: Boolean
+}
+
+type Query {
+  # ### GET user
+  #
+  # _Arguments_
+  # - **id**: User id (optional)
+  user(_id: ID!): User
+  users(roles: [String], disabled: Boolean): [User]
+}
+
+type Mutation {
+  createUser(input: UserInput): User
+  updateUser(_id: ID!, input: UserInput): User
+  deleteUser(_id: ID!): User
+}

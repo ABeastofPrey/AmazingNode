@@ -1,0 +1,26 @@
+union Product = Bicycle | Racket
+ 
+type Bicycle {
+    id: ID!
+    brand: String!
+    wheels: Int!
+}
+ 
+type Racket {
+    id: ID!
+    brand: String!
+    sportType: SportType!
+}
+ 
+enum SportType {
+    TENNIS
+    SQUASH
+}
+ 
+type Query {
+  # ### GET products
+  #
+  # _Arguments_
+  # - **id**: Product id (optional)
+  products(id: Int): [Product]
+}
